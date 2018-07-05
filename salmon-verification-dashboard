@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source ./openstack-gerrit-dashboard/.venv/bin/activate
+
+QUERY=`cat ~/.bin/salmon-gerrit-query.txt`
+
+python2 ./openstack-gerrit-dashboard/dash.py balazs.gibizer \
+-u gibi \
+-P 454nwcl9jhke \
+-r 60 \
+-q "$QUERY"
+
+deactivate

@@ -1,0 +1,47 @@
+#! /bin/bash
+
+# Prerequisites:
+# * running i3 window manager process
+
+terminate() 
+{
+    kill `pgrep -f "$1"`
+}
+
+# needs for i3-msg to find which i3 instance to talk to
+DISPLAY=:0.0
+
+# remove the panels, here the process implementing the panel shall be in sync with the
+# class and instane definition of the windows in the layout
+#terminate 'terminator'
+
+# Get rid of the old layout before appending the new one.
+# This can be bogus. If the layout doesn't cleaned up then kill and restart i3 manually
+#i3-msg 'reload'
+
+# Create the desktop with simple layout.
+# Current layout is a single tabbed window where a tab can hold a panel and only one
+# tab is visible at a time.
+# TODO: currently the layout assumes that every panel is a terminator process but we can 
+# change that to simply support any process.
+i3-msg 'workspace 3: Salmon; append_layout /home/alarm/.bin/salmon-i3-workspace-layout.json'
+
+# Add panels to show things.
+# Make sure that the window created has a known title set as we use that title to
+# switch focuse between tabs / panels
+i3-msg 'exec terminator -T "verification" -e /home/alarm/.bin/salmon-verification-dashboard'
+
+i3-msg 'exec terminator -T "review" -e "/home/alarm/.bin/salmon-review-dashboard"'
+
+#wait the panels to spawn and set the window title before start switching focus
+sleep 5
+
+# lets iterate through the tabs by switching focus based on window title
+while :
+do
+    i3-msg '[title="verification"] focus'
+    sleep 60
+    i3-msg '[title="^.*review.*$"] focus'
+    sleep 60
+done
+

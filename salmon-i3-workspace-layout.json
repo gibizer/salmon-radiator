@@ -1,0 +1,21 @@
+{  
+   "layout":"tabbed",
+   "percent":0.5,
+   "type":"con",
+   "nodes":[  
+      {  
+         "border":"normal",
+         "current_border_width":2,
+         "floating":"auto_off",
+         "name":"Jekins dashboard",
+         "percent":0.5,
+         "swallows":[  
+            {  
+               "class":"^Terminator$",
+               "instance":"^terminator$"
+            }
+         ],
+         "type":"con"
+      }
+   ]
+}

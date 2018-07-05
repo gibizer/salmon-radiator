@@ -1,0 +1,33 @@
+(topic:bp/additional-notification-fields-for-searchlight OR 
+ topic:^bp/versioned-notification-transformation.* OR
+
+ topic:bp/support-trunk-port OR
+ message:support-trunk-port OR
+
+ topic:bp/neutron-trunk-ui OR
+ message:neutron-trunk-ui OR
+
+ owner:bence.romsics@ericsson.com OR
+ owner:lajos.katona@ericsson.com OR
+ owner:ferenc.cserepkei@ericsson.com OR
+ owner:botond.zoltan@ericsson.com OR
+ owner:elod.illes@ericsson.com OR     
+ owner:balazs.gibizer@ericsson.com OR
+
+ author:bence.romsics@ericsson.com OR
+ author:lajos.katona@ericsson.com OR
+ author:ferenc.cserepkei@ericsson.com OR
+ author:botond.zoltan@ericsson.com OR
+ author:elod.illes@ericsson.com OR     
+ author:balazs.gibizer@ericsson.com OR
+
+ committer:bence.romsics@ericsson.com OR
+ committer:lajos.katona@ericsson.com OR
+ committer:ferenc.cserepkei@ericsson.com OR
+ committer:botond.zoltan@ericsson.com OR
+ committer:elod.illes@ericsson.com OR     
+ committer:balazs.gibizer@ericsson.com OR
+
+ message:"@ericsson.com" message:"co-authored-by"
+
+)

@@ -1,0 +1,11 @@
+#! /bin/bash
+
+cd /home/alarm/.bin/
+export DISPLAY=:0.0
+killall terminator
+killall i3
+i3 &
+sleep 1
+salmon-radiator &
+
+
