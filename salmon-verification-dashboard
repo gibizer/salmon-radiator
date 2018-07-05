@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source ./openstack-gerrit-dashboard/.venv/bin/activate
+source ~/.bin/openstack-gerrit-dashboard/.venv/bin/activate
 
 QUERY=`cat ~/.bin/salmon-gerrit-query.txt`
 
-python2 ./openstack-gerrit-dashboard/dash.py balazs.gibizer \
+python2 ~/.bin/openstack-gerrit-dashboard/dash.py balazs.gibizer \
 -u gibi \
 -P 454nwcl9jhke \
 -r 60 \
